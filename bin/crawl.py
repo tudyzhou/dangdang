@@ -96,6 +96,7 @@ def main(db_p, output_p):
     debug = open(debug_p, "w")
 
     r_fmt = lambda x: x if x else "-"
+    output.write("#ID\timg\tindex\trecom\torg\n")
 
     for _id in parserDB(db_p, debug):
 
@@ -134,8 +135,8 @@ def main(db_p, output_p):
             if sum(matchs) == 3:
                 status = "OK"
                 prefix = "DETAIL"
-            matchs = map(str, matchs)
 
+        matchs = map(str, matchs)
         Debug("[%s] Fetch %s, %s %.2f second. %s " % (
             prefix, _id, '-'.join(matchs), time.time()-start_t, status), debug)
 
