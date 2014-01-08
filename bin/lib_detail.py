@@ -41,7 +41,7 @@ def fetchDangDang(dangdang_id, cache_dir, input_code):
             con_r = urllib2.urlopen(url)
             con = con_r.read()
             if cache_path:
-                open(cache_path, "w").write(con)
+                open(cache_path, "wb").write(con)
             con = con.decode(input_code)
             con = con.encode('utf-8')
         except Exception as e:

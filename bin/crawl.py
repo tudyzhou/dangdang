@@ -74,7 +74,7 @@ def fetchDetail(img_url, cache_dir, debug):
     item_id = P_item.search(img_url).group(1)
     (ret, err) = ParserDetail(item_id, cache_dir)
     if err:
-        Debug("[ERR] Fetch dangdang item %s FAIL. %s" % (item_id, img_url), debug)
+        Debug("[ERR] Fetch dangdang item %s FAIL. %s, %s" % (item_id, err, img_url), debug)
 
     return ret
 
